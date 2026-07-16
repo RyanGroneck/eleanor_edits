@@ -1,6 +1,6 @@
+jax
 nbsphinx
 ipykernel
-photutils>=2.2.0
 tqdm
 lightkurve
 astropy>=3.2.3
@@ -10,3 +10,4 @@ tess-point
 astroquery
 setuptools>=41.0.0
 beautifulsoup4>=4.6.0
+photutils==3.0.0
