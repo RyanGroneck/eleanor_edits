@@ -299,7 +299,11 @@ class Source(object):
         else:
             # Handles cases where users can pass in their sector
             if type(self.usr_sec) == int:
-                arg = np.argwhere(sectors == self.usr_sec)[0]
+                arg_list = np.argwhere(sectors == self.usr_sec)
+                if len(arg_list) == 0:
+                    raise SearchError("User-specified sector {} is not in listed target's sectors {}.".format(self.usr_sec, sectors))
+                else:
+                    arg = arg_list[0]
                 if len(arg) > 0:
                     self.sector = sectors[arg][0]
                     camera = cameras[arg][0]
